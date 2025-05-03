@@ -1,1 +1,4 @@
 godot-cpp/
+demo/bin/libgdexample.linux.template_debug.x86_64.so
+src/gdexample.os
+src/register_types.os
