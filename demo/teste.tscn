@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://de5h318ju6m8e"]
+
+[ext_resource type="Script" path="res://camera_base.gd" id="1_27r0u"]
+[ext_resource type="Texture2D" uid="uid://dyq4xctgxodra" path="res://icon.svg" id="1_ny2lm"]
+
+[node name="Teste" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.308995)
+projection = 1
+current = true
+script = ExtResource("1_27r0u")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.705168)
+texture = ExtResource("1_ny2lm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ny2lm")

@@ -2,6 +2,7 @@
 #define GDEXAMPLE_REGISTER_TYPES_H
 
 #include <godot_cpp/core/class_db.hpp>
+#include "scenes/world/WorldBase.hpp"
 
 using namespace godot;
 

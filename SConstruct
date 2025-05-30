@@ -3,6 +3,7 @@ import os
 import sys
 
 env = SConscript("godot-cpp/SConstruct")
+opts = Variables([], ARGUMENTS)
 
 # For reference:
 # - CCFLAGS are compilation flags shared between C and C++
@@ -12,9 +13,22 @@ env = SConscript("godot-cpp/SConstruct")
 # - CPPDEFINES are for pre-processor defines
 # - LINKFLAGS are for linking flags
 
+opts.Add(EnumVariable('platform', "Compilation platform", 'linux', ['', 'windows', 'x11', 'linux', 'osx']))
+opts.Add(BoolVariable('use_llvm', "Use the LLVM / Clang compiler", 'no'))
+
+godot_headers_path = "godot-cpp/godot_headers/"
+cpp_bindings_path = "godot-cpp/"
+
+
 # tweak this if you want to use different folders, or more folders, to store your source code in.
-env.Append(CPPPATH=["src/"])
-sources = Glob("src/*.cpp")
+env.Append(CPPPATH=["src/", "src/scenes/camera/hud", "src/scenes/level/base"])
+sources = Glob("src/*.cpp") + \
+    Glob("src/scenes/environment/*.cpp")+ \
+    Glob("src/scenes/world/*.cpp")+ \
+    Glob("src/scenes/level/base/*.cpp")+ \
+    Glob("src/scenes/level/base/wall/*.cpp")+ \
+    Glob("src/scenes/camera/*.cpp")+ \
+    Glob("src/scenes/camera/hud/*.cpp")
 
 if env["platform"] == "macos":
     library = env.SharedLibrary(
@@ -39,5 +53,13 @@ else:
         "demo/bin/libgdexample{}{}".format(env["suffix"], env["SHLIBSUFFIX"]),
         source=sources,
     )
+
+env.Append(CPPPATH=['.', godot_headers_path, cpp_bindings_path + 'include/', 
+                    cpp_bindings_path + 'include/core/', 
+                    cpp_bindings_path + 'include/godot_cpp/variant', 
+                    cpp_bindings_path + 'include/godot_cpp/core', 
+                    cpp_bindings_path + 'gen/include/godot_cpp/classes', 
+                    cpp_bindings_path + 'gen/include/godot_cpp/core', 
+                    cpp_bindings_path + 'gen/include/godot_cpp/variant'])
 
 Default(library)

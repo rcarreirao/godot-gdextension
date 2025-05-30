@@ -1,7 +1,7 @@
 #include "register_types.h"
 
 #include "gdexample.h"
-
+#include "gdexample3d.h"
 #include <gdextension_interface.h>
 #include <godot_cpp/core/defs.hpp>
 #include <godot_cpp/godot.hpp>
@@ -14,6 +14,14 @@ void initialize_example_module(ModuleInitializationLevel p_level) {
 	}
 
 	GDREGISTER_RUNTIME_CLASS(GDExample);
+	GDREGISTER_RUNTIME_CLASS(GDExample3D);
+	GDREGISTER_RUNTIME_CLASS(WorldBase);
+	GDREGISTER_RUNTIME_CLASS(CameraBase);
+	GDREGISTER_RUNTIME_CLASS(LevelBase);
+	GDREGISTER_RUNTIME_CLASS(WallDown);
+	GDREGISTER_RUNTIME_CLASS(WallUp);
+	GDREGISTER_RUNTIME_CLASS(WallUpBackground);
+	GDREGISTER_RUNTIME_CLASS(EnvironmentLight);
 }
 
 void uninitialize_example_module(ModuleInitializationLevel p_level) {

@@ -1,31 +1,31 @@
-#include "gdexample.h"
+#include "gdexample3d.h"
 #include <resource_loader.hpp>
 #include <godot_cpp/core/class_db.hpp>
 using namespace godot;
 
-void GDExample::_bind_methods() {
+void GDExample3D::_bind_methods() {
 }
 
-GDExample::GDExample() {
+GDExample3D::GDExample3D() {
 	// Initialize any variables here.
 	time_passed = 0.0;
 
 }
 
-GDExample::~GDExample() {
+GDExample3D::~GDExample3D() {
 	// Add your cleanup here.
 }
 
-void GDExample::_process(double delta) {
+void GDExample3D::_process(double delta) {
 	time_passed += delta;
 
-	Vector2 new_position = Vector2(10.0 + (10.0 * sin(time_passed * 2.0)), 10.0 + (10.0 * cos(time_passed * 1.5)));
+	Vector3 new_position = Vector3(10.0 + (10.0 * sin(time_passed * 2.0)), 10.0 + (10.0 * cos(time_passed * 1.5)), 0);
 
 	this->set_position(new_position);
 }
 
-void GDExample::_ready() {
-    print_line("Gd Example ready");
+void GDExample3D::_ready() {
+    print_line("Gd Example 3d ready");
     
     ResourceLoader* loader = ResourceLoader::get_singleton();
     this->texture = loader->load("res://icon.svg");

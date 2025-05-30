@@ -1,8 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://c43oao1v85uhw"]
+[gd_scene load_steps=2 format=3 uid="uid://d1qhhtuq0jtrk"]
 
-[ext_resource type="Texture2D" uid="uid://b8olfyif04imm" path="res://icon.svg" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://dyq4xctgxodra" path="res://icon.svg" id="1_onu02"]
 
 [node name="Node3D" type="Node3D"]
 
-[node name="GDExample" type="GDExample" parent="."]
-texture = ExtResource("1_ig7tw")
+[node name="WorldBase" type="WorldBase" parent="."]
+
+[node name="CameraBase" type="CameraBase" parent="."]
+top_level = false
+current = false
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+visible = false
+texture = ExtResource("1_onu02")
