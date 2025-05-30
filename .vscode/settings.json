@@ -1,0 +1,15 @@
+{
+    "C_Cpp.default.compilerPath": "/usr/bin/g++-11",
+    "files.associations": {
+        "*.dbclient-js": "javascript",
+        "*.embeddedhtml": "html",
+        "*.sqlbook": "sql",
+        "*.ndjson": "jsonl",
+        "type_traits": "cpp",
+        "cmath": "cpp",
+        "complex": "cpp",
+        "bitset": "cpp",
+        "vector": "cpp",
+        "atomic": "cpp"
+    }
+}
