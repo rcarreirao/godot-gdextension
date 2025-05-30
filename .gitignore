@@ -4,3 +4,4 @@ src/gdexample.os
 src/register_types.os
 demo/bin/*.so
 .sconsign.dblite
+/*.os
