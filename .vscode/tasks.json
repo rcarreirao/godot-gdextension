@@ -6,7 +6,12 @@
         {
             "label": "build",
             "type": "shell",
-            "command": "scons -j12 target=template_debug debug_symbols=yes"
+            "command": "scons",
+            "args": [ "-j11", "target=template_debug", "platform=linux", "debug_symbols=yes", "dev_build=yes", "compiledb=yes"],
+            "options":{
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": "$msCompile"
         }
     ]
 }

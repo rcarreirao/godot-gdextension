@@ -5,13 +5,27 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Debug",
             "type": "lldb",
             "request": "launch",
-            "name": "Debug",
             "preLaunchTask": "build",
             //"program": "${workspaceFolder}/<executable file>",
+            //"program": "${workspaceFolder}/demo/bin/libgdexample.linux.template_debug.dev.x86_64.so",
             "program": "godot",
             "args": ["--path", "./demo"],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": true,
+            "environment": [],
+            "externalConsole": false,
+        },
+        {
+            "type": "debugpy",
+            "request": "launch",
+            "name": "Debug Python",
+            "preLaunchTask": "build",
+            //"program": "${workspaceFolder}/<executable file>",
+            "program": "scons",
+            "args": [],
             "cwd": "${workspaceFolder}"
         }
     ]

@@ -4,7 +4,9 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/godot-cpp/gen/include/godot_cpp/classes"
+                "${workspaceFolder}/lib/godot-cpp/gen/include/godot_cpp/classes",
+                "${workspaceFolder}/lib/lua-gdextension/src",
+                "${workspaceFolder}/src/scenes/level/base/**"
             ],
             "defines": [],
             "cStandard": "c17",
@@ -13,8 +15,10 @@
             "browse": {
                 "path": [
                     "${workspaceFolder}",
-                    "${workspaceFolder}/godot-cpp/gen/include/godot_cpp/classes/**",
-                    "${workspaceFolder}/src/**"
+                    "${workspaceFolder}/lib/godot-cpp/gen/include/godot_cpp/classes/**",
+                    "${workspaceFolder}/lib/lua-gdextension/src/**",
+                    "${workspaceFolder}/src/**",
+                    "${workspaceFolder}/src/scenes/level/base/**"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""

@@ -1,5 +1,6 @@
 {
     "C_Cpp.default.compilerPath": "/usr/bin/g++-11",
+    "C_Cpp.intelliSenseEngine": "default",
     "files.associations": {
         "*.dbclient-js": "javascript",
         "*.embeddedhtml": "html",
@@ -10,6 +11,9 @@
         "complex": "cpp",
         "bitset": "cpp",
         "vector": "cpp",
-        "atomic": "cpp"
-    }
+        "atomic": "cpp",
+        "functional": "cpp",
+        "string_view": "cpp"
+    },
+    //"cmake.sourceDirectory": "/var/www/html/godot-tests/godot-gd-game/lib/godot-cpp"
 }
