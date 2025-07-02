@@ -18,8 +18,11 @@
 #include <LuaFunction.hpp>
 #include <LuaScript.hpp>
 #include <LuaScriptMethod.hpp>
+#include <LuaCoroutine.hpp>
+#include <LuaScriptResourceFormatLoader.hpp>
 #include <script-language/LuaScript.hpp>
 #include <godot_cpp/classes/file_access.hpp>
+#include "../utils/VariantArguments.hpp"
 
 using namespace luagdextension;
 namespace godot {
@@ -35,7 +38,9 @@ namespace godot {
         Ref<GDScript> gdscript;
         Ref<luagdextension::LuaScript> luascript;
         luagdextension::LuaState *luastate;
+        luagdextension::LuaScriptResourceFormatLoader *formatl;
         Object *instance = nullptr;
+        Object *instance2 = nullptr;
         int i;
         int g;
         void load_script();

@@ -13,7 +13,19 @@
         "vector": "cpp",
         "atomic": "cpp",
         "functional": "cpp",
-        "string_view": "cpp"
+        "string_view": "cpp",
+        "array": "cpp",
+        "chrono": "cpp",
+        "compare": "cpp",
+        "ratio": "cpp",
+        "tuple": "cpp",
+        "utility": "cpp",
+        "variant": "cpp",
+        "initializer_list": "cpp",
+        "valarray": "cpp",
+        "random": "cpp",
+        "typeindex": "cpp",
+        "typeinfo": "cpp"
     },
     //"cmake.sourceDirectory": "/var/www/html/godot-tests/godot-gd-game/lib/godot-cpp"
 }

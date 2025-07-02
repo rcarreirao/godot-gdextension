@@ -25,25 +25,30 @@ void LevelBase::load_lua_script(){
     print_line("Call Load Lua script4");
 
     this->luastate = memnew(luagdextension::LuaState());
-    luastate->load_file(this->file);
-    int64_t size = this->file.length();
-    this->luascript = LuaScriptLanguage::get_singleton()->_create_script();
-	this->luascript->set_path(this->file);
-	this->luascript->set_source_code(FileAccess::get_file_as_string(this->file));
-    this->luascript->validate("bouncing_logo.lua", "/var/www/html/godot-tests/godot-gd-game/demo");
-	Error status = this->luascript->reload();
+    luastate->open_libraries();
+    //luastate->load_file(this->file);
+    //Variant result = luastate->do_file("res://bouncing_logo.lua");
+    //Variant result = luastate->do_string(FileAccess::get_file_as_string(this->file));
+    //this->luascript = ResourceLoader::get_singleton()->load("res://bouncing_logo.lua");
+    this->formatl = memnew(luagdextension::LuaScriptResourceFormatLoader());
+    this->luascript = this->formatl->_load("res://bouncing_logo.lua","res://", true, 1);
+    this->set_script(this->luascript);
 
-    const LuaScriptMethod *method = this->luascript->get_metadata().methods.getptr("ready");
-    if(this->luascript->_has_method("ready")){
+    const LuaScriptMethod *method = this->luascript->get_metadata().methods.getptr("_rods");
+    if(this->luascript->_has_method("_rods")){
         print_line("Tem method");
     }else{
         print_line("Não Tem method");
     }
-    //Variant result = resl->invoke_lua(method->method, Array::make("a"), false);
-	if (status == 1) {
-        print_line("Lua ok;");
-		return ;
-	}
+    // //Variant result = resl->invoke_lua(method->method, Array::make("a"), false);
+	// if (status == 1) {
+    //     print_line("Lua ok;");
+	// 	return ;
+	// }
+    UtilityFunctions::print(method->name);
+    LuaCoroutine::invoke_lua(method->method, VariantArguments(), false);
+    //Variant ret = instance2->call("_rods");
+    //UtilityFunctions::print("Call result:", ret);
 	print_line("Lua script not ok;");
 }
 
