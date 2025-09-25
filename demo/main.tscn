@@ -6,9 +6,7 @@
 
 [node name="WorldBase" type="WorldBase" parent="."]
 
-[node name="CameraBase" type="CameraBase" parent="."]
-top_level = false
-current = false
+
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 visible = false
