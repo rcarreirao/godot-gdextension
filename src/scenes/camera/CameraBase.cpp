@@ -34,8 +34,6 @@ void CameraBase::_process(double delta) {
 
 void CameraBase::_ready() {
     print_line("Camera ready");
-
-
 }
 
 void CameraBase::checkState(double delta){

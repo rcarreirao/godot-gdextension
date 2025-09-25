@@ -3,8 +3,6 @@
 
 #include <godot_cpp/classes/sprite2d.hpp>
 #include <godot_cpp/classes/texture2d.hpp>
-#include "scenes/camera/hud/CameraHud.hpp"
-#include "scenes/camera/CameraBase.hpp"
 namespace godot {
 
 class GDExample : public Sprite2D {
