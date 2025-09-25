@@ -18,6 +18,9 @@ void initialize_example_module(ModuleInitializationLevel p_level) {
 	GDREGISTER_RUNTIME_CLASS(WallUp);
 	GDREGISTER_RUNTIME_CLASS(WallUpBackground);
 	GDREGISTER_RUNTIME_CLASS(EnvironmentLight);
+	GDREGISTER_RUNTIME_CLASS(Node3DScript);
+	GDREGISTER_RUNTIME_CLASS(EngineLuaScript);
+	GDREGISTER_RUNTIME_CLASS(EngineGdScript);
     initialize_lua_module(p_level);
 }
 

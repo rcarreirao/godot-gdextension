@@ -18,9 +18,6 @@ namespace godot {
         PlaneMesh *planeMesh;
         StandardMaterial3D *materialPlaneMesh;
         Ref<Texture2D> texture;
-
-
-
     protected:
         static void _bind_methods();
         void setup();
