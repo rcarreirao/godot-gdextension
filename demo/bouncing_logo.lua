@@ -15,6 +15,7 @@ local LuaBouncingLogo = {
 		hint = PROPERTY_HINT_RANGE,
 		hint_string = "0,360,degrees"
 	}),
+    sprite = nil,
 	-- Declare signals
 	bounced = signal(),
 }
@@ -23,14 +24,30 @@ function LuaBouncingLogo:_ready()
 	print("Ready lua----------------------")
 	--self.position = self:get_viewport():get_size() / 2
 	-- self.movement = Vector2(self.linear_velocity, 0):rotated(deg_to_rad(self.initial_angle))
+	if(self.count == 0) then
+		self.sprite = Sprite2D:new()
+
+		self.sprite.texture = ResourceLoader:load("res://icon_green.png")
+		print("Exists")
+		print(ResourceLoader:exists("res://icon_green.png"))
+
+		self.sprite.position = Vector2(150, 5)
+		self:add_child(self.sprite)
+	end
+	self.count = self.count + 1
 end
 
 function LuaBouncingLogo:get_viewport()
+	queue_free(self.sprite)
+end
+
+function LuaBouncingLogo:_exit_tree()
+	print("Exiting tree----------------------")
 	
 end
 
 function LuaBouncingLogo:_rods()
-	print("Rods")
+	print("Rods inside boucing_logo.lua")
 	local n = Node:new()
 	--self:add_child(n)
 	print(self)
@@ -52,17 +69,7 @@ end
 function LuaBouncingLogo:_process(delta)
 	-- print("_process lua")
 	--print(self.count)
-	if(self.count == 0) then
-		local sprite = Sprite2D:new()
-
-		sprite.texture = ResourceLoader:load("res://icon_green.png")
-		print("Exists")
-		print(ResourceLoader:exists("res://icon_green.png"))
-
-		sprite.position = Vector2(150, 5)
-		self:add_child(sprite)
-	end
-	self.count = self.count + 1
+	
 	-- local viewport_size = self:get_viewport():get_size()
 	-- local viewport_rect = Rect2(Vector2(), viewport_size)
 	-- if not viewport_rect:encloses(self.global_transform * self:get_rect()) then
