@@ -10,7 +10,7 @@
             "request": "launch",
             "preLaunchTask": "build",
             //"program": "${workspaceFolder}/<executable file>",
-            //"program": "${workspaceFolder}/demo/bin/libgdexample.linux.template_debug.dev.x86_64.so",
+            "program": "${workspaceFolder}/demo/bin/libgdexample.linux.template_debug.dev.x86_64.so",
             "program": "godot",
             "args": ["--path", "./demo"],
             "cwd": "${workspaceFolder}",

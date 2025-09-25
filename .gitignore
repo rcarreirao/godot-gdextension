@@ -5,4 +5,8 @@ src/register_types.os
 demo/bin/*.so
 .sconsign.dblite
 /*.os
+/**/*.ossrc/main.a
+src/main.os
+src/gdexample3d.os
+src/main.a
 /**/*.os

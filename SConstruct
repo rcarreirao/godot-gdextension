@@ -59,6 +59,8 @@ env.Append(CPPPATH=[luagd_headers_path, luagd_cpp_bindings_path,
 # tweak this if you want to use different folders, or more folders, to store your source code in.
 env.Append(CPPPATH=["src/", "src/scenes/camera/hud", "src/scenes/level/base"])
 sources = Glob("src/*.cpp") + \
+    Glob("src/objects/node/*.cpp")+ \
+    Glob("src/objects/script/*.cpp")+ \
     Glob("src/scenes/environment/*.cpp")+ \
     Glob("src/scenes/world/*.cpp")+ \
     Glob("src/scenes/level/base/*.cpp")+ \
@@ -125,6 +127,7 @@ elif env["platform"] == "ios":
             source=sources,
         )
 else:
+    env["suffix"] = ".{}.{}.dev.x86_64".format(env["platform"], env["target"])
     library = env.SharedLibrary(
         "demo/bin/libgdexample{}{}".format(env["suffix"], env["SHLIBSUFFIX"]),
         source=sources,

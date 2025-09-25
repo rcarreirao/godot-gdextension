@@ -2,6 +2,7 @@
 #define WORLDBASE_HPP
 
 #include <node3d.hpp>
+#include "../../objects/node/Node3DScript.hpp"
 #include "../camera/CameraBase.hpp"
 #include "../../gdexample.h"
 #include "../../gdexample3d.h"
@@ -18,9 +19,12 @@ namespace godot {
         GDExample3D *gdExample3D;
         LevelBase *levelBase;
         EnvironmentLight *environmentLight;
+        Node3DScript *script;
+        String scriptPath = "scripts/world/world_base.lua";
 
     protected:
         static void _bind_methods();
+        void loadScript();
         
     public:
         WorldBase();
