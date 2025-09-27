@@ -29,6 +29,9 @@ env.Append(CPPPATH=['.', godot_headers_path, godot_cpp_bindings_path + 'include/
                     godot_cpp_bindings_path + 'gen/include/godot_cpp/core', 
                     godot_cpp_bindings_path + 'gen/include/godot_cpp/variant',
                     ])
+env.Append(CCFLAGS = ['-g'])
+env.Append(CXXFLAGS = ['-g'])
+
 #Sol Headers
 sol_headers_path = "lib/sol2/include/"
 sol_cpp_bindings_path = "lib/sol2/include/sol/"

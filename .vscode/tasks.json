@@ -7,7 +7,7 @@
             "label": "build",
             "type": "shell",
             "command": "scons",
-            "args": [ "-j11", "target=template_debug", "platform=linux", "debug_symbols=yes", "dev_build=yes", "compiledb=yes"],
+            "args": [ "-j11", "target=template_debug", "optimize=speed_trace", "platform=linux", "debug_symbols=yes", "dev_build=yes", "compiledb=yes"],
             "options":{
                 "cwd": "${workspaceFolder}"
             },

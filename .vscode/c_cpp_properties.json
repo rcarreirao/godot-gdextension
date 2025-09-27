@@ -5,6 +5,8 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/lib/godot-cpp/gen/include/godot_cpp/classes",
+                "${workspaceFolder}/lib/godot-cpp/gen/src/classes",
+                "${workspaceFolder}/lib/godot-cpp/gen/src/variant",
                 "${workspaceFolder}/lib/lua-gdextension/src",
                 "${workspaceFolder}/src/scenes/level/base/**"
             ],
@@ -16,6 +18,8 @@
                 "path": [
                     "${workspaceFolder}",
                     "${workspaceFolder}/lib/godot-cpp/gen/include/godot_cpp/classes/**",
+                    "${workspaceFolder}/lib/godot-cpp/gen/src/classes/**",
+                    "${workspaceFolder}/lib/godot-cpp/gen/src/variant/**",
                     "${workspaceFolder}/lib/lua-gdextension/src/**",
                     "${workspaceFolder}/src/**",
                     "${workspaceFolder}/src/scenes/level/base/**"

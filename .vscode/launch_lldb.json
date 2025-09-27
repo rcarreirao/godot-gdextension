@@ -6,12 +6,12 @@
     "configurations": [
         {
             "name": "Debug",
-            "type": "cppdbg",
+            "type": "lldb",
             "request": "launch",
             "preLaunchTask": "build",
             //"program": "${workspaceFolder}/<executable file>",
             //"program": "${workspaceFolder}/demo/bin/libgdexample.linux.template_debug.dev.x86_64.so",
-            "program": "${workspaceFolder}/godot",
+            "program": "godot",
             "args": ["--path", "./demo", "--verbose"],
             "cwd": "${workspaceFolder}",
             "stopAtEntry": true,
