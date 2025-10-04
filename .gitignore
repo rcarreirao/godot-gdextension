@@ -20,3 +20,4 @@ src/objects/script/EngineGdScript.os
 src/objects/node/Node3DScript.os
 src/scenes/camera/CameraBase.os
 src/scenes/camera/hud/CameraContainer.os
+compile_commands.json

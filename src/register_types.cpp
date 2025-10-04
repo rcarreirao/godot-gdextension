@@ -54,8 +54,8 @@ void initialize_lua_module(ModuleInitializationLevel p_level) {
 	ClassDB::register_abstract_class<LuaScriptResourceFormatLoader>();
 	ClassDB::register_abstract_class<LuaScriptResourceFormatSaver>();
 	LuaScriptLanguage::get_or_create_singleton();
-	LuaScriptResourceFormatLoader::register_in_godot();
-	LuaScriptResourceFormatSaver::register_in_godot();
+	//LuaScriptResourceFormatLoader::register_in_godot();
+	//LuaScriptResourceFormatSaver::register_in_godot();
 
 	// Lua code editing
 	ClassDB::register_class<LuaCodeEdit>();

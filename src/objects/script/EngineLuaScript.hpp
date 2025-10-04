@@ -19,7 +19,7 @@ using namespace luagdextension;
 
 namespace godot {
 
-    class EngineLuaScript : virtual public Node3DScript {
+    class EngineLuaScript :  public Node3DScript {
         GDCLASS(EngineLuaScript, Node3DScript)
 
     private:

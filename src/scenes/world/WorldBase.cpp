@@ -5,7 +5,6 @@ using namespace godot;
 WorldBase::WorldBase() {}
 
 WorldBase::~WorldBase() {
-    memdelete(this->script);
 }
 
 void WorldBase::_bind_methods() {
@@ -32,7 +31,7 @@ void WorldBase::_ready() {
 }
 
 void WorldBase::loadScript(){
-    this->script = memnew(EngineLuaScript());    
+    this->script = memnew(EngineLuaScript);    
     this->script->setScriptPath(this->scriptPath);
     this->script->load_script();
     this->add_child(this->script);
