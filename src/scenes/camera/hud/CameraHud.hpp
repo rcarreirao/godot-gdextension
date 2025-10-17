@@ -18,7 +18,7 @@ public:
 	~CameraHud();
 
 	void _process(double delta) override;
-    void updateLabel(godot::String text);
+    void updateCameraPosition(Vector3 position);
 
 };
 

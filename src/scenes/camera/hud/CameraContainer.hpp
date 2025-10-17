@@ -11,6 +11,12 @@ class CameraContainer : public Container {
 
 private:
     Label *labelPosition;
+    Label *labelPositionX;
+    Label *labelPositionY;
+    Label *labelPositionZ;
+
+	void initializePositionLabels();
+
 protected:
 	static void _bind_methods();
 
@@ -22,7 +28,7 @@ public:
 	void _ready() override;
     bool unreference();
 
-    void updateLabel(godot::String text);
+    void updateCameraPosition(Vector3 position);
 };
 
 }

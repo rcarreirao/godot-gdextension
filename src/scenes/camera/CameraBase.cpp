@@ -77,11 +77,7 @@ void CameraBase::moveAndSlide(double delta) {
     vector3.z = godot::Math::lerp((float) (vector3.z), 
         (float) (vector3.z+(this->directionZ * speed)), 
         (float) (this->smooth * delta));
-    godot::String text;
-    char buffer[50];
-    snprintf(buffer, 50, "Movendo %f, %f, %f", vector3.x, vector3.y, vector3.z);
-    text = buffer;
-    this->cameraHud->updateLabel(text);
+    this->cameraHud->updateCameraPosition(vector3);
 	this->set_position(vector3);
 }
 

@@ -21,3 +21,7 @@ src/objects/node/Node3DScript.os
 src/scenes/camera/CameraBase.os
 src/scenes/camera/hud/CameraContainer.os
 compile_commands.json
+src/gdexample3d.os
+src/scenes/level/base/wall/WallDown.os
+src/scenes/level/base/wall/WallUp.os
+src/scenes/level/base/wall/WallUpBackground.os

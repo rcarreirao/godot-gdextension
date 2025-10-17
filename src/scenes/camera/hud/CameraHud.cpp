@@ -17,6 +17,6 @@ CameraHud::~CameraHud() {
 void CameraHud::_process(double delta) {
 }
 
-void CameraHud::updateLabel(godot::String text){
-    this->cameraContainer->updateLabel(text);
+void CameraHud::updateCameraPosition(Vector3 position){
+    this->cameraContainer->updateCameraPosition(position);
 }
