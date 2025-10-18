@@ -68,6 +68,7 @@ sources = Glob("src/*.cpp") + \
     Glob("src/scenes/world/*.cpp")+ \
     Glob("src/scenes/level/base/*.cpp")+ \
     Glob("src/scenes/level/base/wall/*.cpp")+ \
+    Glob("src/scenes/level/base/ground/*.cpp")+ \
     Glob("src/scenes/camera/*.cpp")+ \
     Glob("lib/lua-gdextension/src/*.cpp")+ \
     Glob("lib/lua-gdextension/src/luaopen/*.cpp")+ \
