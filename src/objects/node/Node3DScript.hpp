@@ -17,8 +17,6 @@ namespace godot {
         GDCLASS(Node3DScript, Node3D)
 
     private:
-        Ref<GDScript> gdscript;
-        Object *instanceGdScript = nullptr;
         // Lua
         luagdextension::LuaState *luastate;
         luagdextension::LuaScriptResourceFormatLoader *formatl;

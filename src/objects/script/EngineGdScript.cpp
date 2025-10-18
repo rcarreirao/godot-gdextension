@@ -9,7 +9,7 @@ void EngineGdScript::_bind_methods() {}
 void EngineGdScript::load_script() {
     print_line("Call Gdscript method initialized from EngineGd");
 
-    Ref<Resource> res = ResourceLoader::get_singleton()->load("res://my_script.gd");
+    Ref<Resource> res = ResourceLoader::get_singleton()->load(this->scriptPath);
     if (res.is_null()) {
         UtilityFunctions::print("Failed to load script.");
         return;
@@ -29,11 +29,13 @@ void EngineGdScript::load_script() {
         UtilityFunctions::print("Failed to instantiate GDScript.");
         return;
     }
+
+    this->set_script(this->gdscript);
     
-    if(this->i < 2){
-        this->i++;
-        this->call_method("my_method", Array::make(42));
-    }
+    // if(this->i < 2){
+    //     this->i++;
+    //     this->call_method("my_method", Array::make(42));
+    // }
     
 }
 

@@ -21,10 +21,12 @@ namespace godot {
         EnvironmentLight *environmentLight;
         Node3DScript *script;
         String scriptPath = "scripts/world/world_base.lua";
+        String scriptPathGd = "scripts/world/world_base.gd";
 
     protected:
         static void _bind_methods();
         void loadScript();
+        void loadScriptLua();
         
     public:
         WorldBase();

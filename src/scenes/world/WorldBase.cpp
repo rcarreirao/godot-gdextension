@@ -2,7 +2,9 @@
 
 using namespace godot;
 
-WorldBase::WorldBase() {}
+WorldBase::WorldBase() {
+    this->loadScript();
+}
 
 WorldBase::~WorldBase() {
 }
@@ -14,7 +16,7 @@ void WorldBase::_process(double delta) {
 }
 
 void WorldBase::_ready() {
-    this->loadScript();
+    
     // this->cameraBase = memnew(CameraBase());
     // this->levelBase = memnew(LevelBase());
     // this->gdExample = memnew(GDExample());
@@ -26,13 +28,18 @@ void WorldBase::_ready() {
     // // this->add_child(this->levelBase);
     // // this->add_child(this->environmentLight);
     // this->cameraBase->set_current(true);
+}
 
-
+void WorldBase::loadScriptLua(){
+    this->script = memnew(EngineLuaScript);    
+    this->script->setScriptPath(this->scriptPath);
+    this->script->load_script();
+    this->add_child(this->script);
 }
 
 void WorldBase::loadScript(){
-    this->script = memnew(EngineLuaScript);    
-    this->script->setScriptPath(this->scriptPath);
+    this->script = memnew(EngineGdScript);    
+    this->script->setScriptPath(this->scriptPathGd);
     this->script->load_script();
     this->add_child(this->script);
 }
