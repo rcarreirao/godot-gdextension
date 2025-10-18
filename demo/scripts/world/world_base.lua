@@ -6,13 +6,15 @@ local WorldBase = {
 	-- global class name (optional)
 	class_name = "WorldBase",
 	
+    cameraBase = CameraBase:new(),
+    levelBase = LevelBase:new()
 }
 
 -- Called when the node enters the scene tree for the first time.
 function WorldBase:_ready()
 	print("Ready WorldBase.lua")
-    local cameraBase = CameraBase:new()
-    self:add_child(cameraBase)
+    self:add_child(self.cameraBase)
+    self:add_child(self.levelBase)
 end
 
 -- Return the metadata table for the script to be usable by Godot objects

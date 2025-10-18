@@ -12,11 +12,13 @@ void LevelBase::_process(double delta) {
 void LevelBase::_ready() {
     print_line("Level base initialized");
 
-    this->wallDown = memnew(WallDown());
+    this->wallDown = memnew(WallDown);
     this->add_child(this->wallDown);
 
-    this->wallUp = memnew(WallUp());
+    this->wallUp = memnew(WallUp);
     this->add_child(this->wallUp);
+    this->levelGround = memnew(LevelGround);
+    this->add_child(this->levelGround);
     //this->load_script();
     this->load_lua_script();
 }

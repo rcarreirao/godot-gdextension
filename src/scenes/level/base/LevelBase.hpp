@@ -13,6 +13,7 @@
 #include <godot_cpp/variant/utility_functions.hpp>
 #include "wall/WallDown.hpp"
 #include "wall/WallUp.hpp"
+#include "ground/LevelGround.hpp"
 #include "../../../objects/node/Node3DScript.hpp"
 #include "../../../objects/script/EngineLuaScript.hpp"
 #include "../../../objects/script/EngineGdScript.hpp"
@@ -29,6 +30,7 @@ namespace godot {
     private:
         WallDown *wallDown;
         WallUp *wallUp;
+        LevelGround *levelGround;
         String script_path = "res://my_script.gd";
         String file = "/var/www/html/godot-tests/godot-gd-game/demo/bouncing_logo.lua";
         int i;

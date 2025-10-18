@@ -15,7 +15,7 @@ local LuaBouncingLogo = {
 		hint = PROPERTY_HINT_RANGE,
 		hint_string = "0,360,degrees"
 	}),
-    sprite = nil,
+	sprite = nil,
 	-- Declare signals
 	bounced = signal(),
 }

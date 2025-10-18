@@ -1,13 +1,5 @@
-[gd_scene load_steps=2 format=3 uid="uid://d1qhhtuq0jtrk"]
-
-[ext_resource type="Texture2D" uid="uid://dyq4xctgxodra" path="res://icon.svg" id="1_onu02"]
+[gd_scene format=3 uid="uid://d1qhhtuq0jtrk"]
 
 [node name="Node3D" type="Node3D"]
 
 [node name="WorldBase" type="WorldBase" parent="."]
-
-
-
-[node name="Sprite3D" type="Sprite3D" parent="."]
-visible = false
-texture = ExtResource("1_onu02")
