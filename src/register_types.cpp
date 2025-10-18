@@ -16,6 +16,7 @@ void initialize_example_module(ModuleInitializationLevel p_level) {
 	GDREGISTER_RUNTIME_CLASS(LevelBase);
 	GDREGISTER_RUNTIME_CLASS(WallDown);
 	GDREGISTER_RUNTIME_CLASS(WallUp);
+	GDREGISTER_RUNTIME_CLASS(LevelGround);
 	GDREGISTER_RUNTIME_CLASS(WallUpBackground);
 	GDREGISTER_RUNTIME_CLASS(EnvironmentLight);
 	GDREGISTER_RUNTIME_CLASS(Node3DScript);
@@ -28,6 +29,7 @@ void uninitialize_example_module(ModuleInitializationLevel p_level) {
 	if (p_level != MODULE_INITIALIZATION_LEVEL_SCENE) {
 		return;
 	}
+    LuaScriptLanguage::delete_singleton();
 }
 
 void initialize_lua_module(ModuleInitializationLevel p_level) {
@@ -52,7 +54,7 @@ void initialize_lua_module(ModuleInitializationLevel p_level) {
 	ClassDB::register_abstract_class<LuaScript>();
 	ClassDB::register_abstract_class<LuaScriptLanguage>();
 	ClassDB::register_abstract_class<LuaScriptResourceFormatLoader>();
-	ClassDB::register_abstract_class<LuaScriptResourceFormatSaver>();
+	// ClassDB::register_abstract_class<LuaScriptResourceFormatSaver>();
 	LuaScriptLanguage::get_or_create_singleton();
 	//LuaScriptResourceFormatLoader::register_in_godot();  // this need to be reviewed as it throws an error when exiting program
 	// LuaScriptResourceFormatSaver::register_in_godot();// this need to be reviewed as it throws an error when exiting program

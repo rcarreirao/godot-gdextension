@@ -11,7 +11,7 @@ CameraBase::CameraBase() {
 	// Initialize any variables here.
     this->cameraHud = memnew(CameraHud());
     this->add_child(this->cameraHud);
-    print_line("Camera base initialized");
+    //print_line("Camera base initialized");
     this->state = StateMachine::IDLE;
     this->directionX = this->directionY = this->directionZ = 0;
     this->speed = 1;
@@ -33,7 +33,7 @@ void CameraBase::_process(double delta) {
 }
 
 void CameraBase::_ready() {
-    print_line("Camera ready");
+    //print_line("Camera ready");
 }
 
 void CameraBase::checkState(double delta){

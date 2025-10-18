@@ -5,8 +5,11 @@ using namespace godot;
 EngineLuaScript::EngineLuaScript() {}
 
 EngineLuaScript::~EngineLuaScript() {
-    memdelete(this->luastate);
-    memdelete(this->formatl);
+    if(this->luascript != nullptr){
+        memdelete(this->luastate);
+        memdelete(this->formatl);
+    }
+    
 }
 
 void EngineLuaScript::_bind_methods() {}

@@ -10,7 +10,7 @@
 
 namespace godot {
 
-    class EngineGdScript : virtual public Node3DScript {
+    class EngineGdScript : public Node3DScript {
         GDCLASS(EngineGdScript, Node3DScript)
 
     private:

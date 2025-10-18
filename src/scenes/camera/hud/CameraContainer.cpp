@@ -6,7 +6,6 @@ void CameraContainer::_bind_methods() {
 }
 
 CameraContainer::CameraContainer() {
-    print_line("Camera Container?");
     this->initializePositionLabels();
 }
 
@@ -39,7 +38,6 @@ void CameraContainer::_process(double delta) {
 
 void CameraContainer::_ready() {
     //fprintf("CameraContainer ready");
-    print_line("Camera Container?");
 }
 
 bool CameraContainer::unreference(){
