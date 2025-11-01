@@ -1,5 +1,5 @@
 @tool # <-- So it runs in the editor
-extends Node3D
+extends WorldBase
 
 #var levelBase := LevelBase()
 #var environmentLight := EnvironmentLight()

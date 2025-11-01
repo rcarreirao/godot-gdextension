@@ -1,5 +1,8 @@
-[gd_scene format=3 uid="uid://d1qhhtuq0jtrk"]
+[gd_scene load_steps=2 format=3 uid="uid://d1qhhtuq0jtrk"]
+
+[ext_resource type="Script" path="res://scripts/world/world_base.gd" id="1_ns8mw"]
 
 [node name="Node3D" type="Node3D"]
 
 [node name="WorldBase" type="WorldBase" parent="."]
+script = ExtResource("1_ns8mw")

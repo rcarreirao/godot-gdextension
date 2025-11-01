@@ -3,7 +3,7 @@
 using namespace godot;
 
 WorldBase::WorldBase() {
-    this->loadScript();
+    //this->loadScript();
 }
 
 WorldBase::~WorldBase() {

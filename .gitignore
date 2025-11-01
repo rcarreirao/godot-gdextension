@@ -25,3 +25,4 @@ src/gdexample3d.os
 src/scenes/level/base/wall/WallDown.os
 src/scenes/level/base/wall/WallUp.os
 src/scenes/level/base/wall/WallUpBackground.os
+src/scenes/level/base/ground/LevelGround.os
