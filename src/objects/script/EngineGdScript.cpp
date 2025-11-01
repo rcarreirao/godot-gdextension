@@ -15,14 +15,14 @@ void EngineGdScript::load_script() {
         return;
     }
 
-    this->gdscript = res;
-    if (gdscript.is_null()) {
+    this->scriptObject = res;
+    if (scriptObject.is_null()) {
         UtilityFunctions::print("Script is not a GDScript.");
         return;
     }
 
     // GDScript::new_() returns a Variant
-    Variant instance_var = this->gdscript->new_();
+    Variant instance_var = this->scriptObject->new_();
     this->instanceGdScript = Object::cast_to<Object>(instance_var.operator Object *());
 
     if (!this->instanceGdScript) {
@@ -30,7 +30,7 @@ void EngineGdScript::load_script() {
         return;
     }
 
-    this->set_script(this->gdscript);
+    //this->set_script(this->scriptObject);
     
     // if(this->i < 2){
     //     this->i++;
@@ -47,7 +47,7 @@ void EngineGdScript::reload_script() {
 void EngineGdScript::unload_script() {
     UtilityFunctions::print("Unloading script.");
     this->instanceGdScript = nullptr;
-    this->gdscript.unref();
+    this->scriptObject.unref();
 }
 
 
@@ -58,5 +58,4 @@ void EngineGdScript::call_method(String method_name, Array args = Array()){
     }
     Variant ret = this->instanceGdScript->call(method_name, args);
     UtilityFunctions::print("Call result:", ret);
-    this->reload_script();
 }

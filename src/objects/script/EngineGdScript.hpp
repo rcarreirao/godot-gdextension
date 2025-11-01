@@ -14,8 +14,8 @@ namespace godot {
         GDCLASS(EngineGdScript, Node3DScript)
 
     private:
-        Ref<GDScript> gdscript;
         Object *instanceGdScript = nullptr;
+
         int i;
         int g;
 

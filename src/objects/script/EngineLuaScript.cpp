@@ -14,6 +14,10 @@ EngineLuaScript::~EngineLuaScript() {
 
 void EngineLuaScript::_bind_methods() {}
 
+void EngineLuaScript::call_method(String method_name, Array args = Array()){
+    
+}
+
 void EngineLuaScript::load_script(){
     print_line("Call Load Lua script from EngineLua1");
     this->luastate = memnew(luagdextension::LuaState());

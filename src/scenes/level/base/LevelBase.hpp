@@ -40,12 +40,14 @@ namespace godot {
     protected:
         static void _bind_methods();
         void load_lua_script();
+        void load_gd_script();
         
     public:
         LevelBase();
         ~LevelBase();
 
         void _process(double delta) override;
+        void process1() ;
         void _ready() override;
     };
 

@@ -15,3 +15,6 @@ Node3DScript* Node3DScript::setScriptPath(String path){
     return this;
 }
 
+Ref<GDScript> Node3DScript::get_script_object(){
+    return this->scriptObject;
+}

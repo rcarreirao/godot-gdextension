@@ -2,7 +2,10 @@
 
 using namespace godot;
 
-WallUp::WallUp() {}
+WallUp::WallUp() {
+    this->set_name("wallUp");
+    this->setup();
+}
 
 WallUp::~WallUp() {}
 
@@ -13,10 +16,10 @@ void WallUp::_process(double delta) {
 }
 
 void WallUp::_ready() {
-    this->setup();
 }
 
 void WallUp::setup(){
     this->wallUpBackground = memnew(WallUpBackground());
+    this->wallUpBackground->set_name("wallUpBackground");
     this->add_child(wallUpBackground);
 }

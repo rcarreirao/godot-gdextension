@@ -24,6 +24,8 @@ namespace godot {
         Object *instanceLuaScript = nullptr;
     protected: 
         String scriptPath;
+        Ref<GDScript> scriptObject;
+
         
     protected:
         void reload_script();
@@ -32,7 +34,8 @@ namespace godot {
 
     public:
         virtual void load_script();
-        void call_method(String method_name, Array args);
+        virtual void call_method(String method_name, Array args);
+        Ref<GDScript> get_script_object();
         Node3DScript* setScriptPath(String path);
         Node3DScript();
         ~Node3DScript();

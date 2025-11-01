@@ -7,16 +7,26 @@ WallUpBackground::WallUpBackground() {}
 WallUpBackground::~WallUpBackground() {}
 
 void WallUpBackground::_bind_methods() {
+    ClassDB::bind_method(D_METHOD("setup"), &WallUpBackground::setup);
+
 }
 void WallUpBackground::_process(double delta) {
 
 }
 
 void WallUpBackground::_ready() {
-    this->setup();
+    //this->setup();
+}
+
+void WallUpBackground::loadScript(){
+    this->script = memnew(EngineGdScript);    
+    this->script->setScriptPath(this->scriptPath);
+    this->script->load_script();
+    this->add_child(this->script);
 }
 
 void WallUpBackground::setup(){
+
     this->setupMaterialPlaneMesh();
     this->mesh = memnew(MeshInstance3D());
     this->mesh->set_mesh(this->planeMesh);
@@ -25,16 +35,20 @@ void WallUpBackground::setup(){
     this->add_child(this->mesh);
 }
 
+void WallUpBackground::setScriptPath(String scriptPath){
+    this->scriptPath = scriptPath;
+}
+
 void WallUpBackground::setPlaneMeshSize(Vector2 vector){
     this->planeMesh->set_size(vector);
 }
 
 void WallUpBackground::setupMaterialPlaneMesh(){
     this->planeMesh = memnew(PlaneMesh());
-    this->setPlaneMeshSize(Vector2(15, 2));
+    this->setPlaneMeshSize(Vector2(15, 2.5));
     this->materialPlaneMesh = memnew(StandardMaterial3D());
     ResourceLoader* loader = ResourceLoader::get_singleton();
-    this->texture = loader->load("res://assets/levels/backgrounds/background_2.png");
+    this->texture = loader->load("res://assets/levels/1/backgrounds/background_2.png");
     this->materialPlaneMesh->set_texture(BaseMaterial3D::TextureParam::TEXTURE_ALBEDO, this->texture );
     this->materialPlaneMesh->set_transparency(BaseMaterial3D::Transparency::TRANSPARENCY_ALPHA);
     this->planeMesh->set_material(this->materialPlaneMesh);

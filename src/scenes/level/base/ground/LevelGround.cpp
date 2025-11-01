@@ -27,7 +27,7 @@ void LevelGround::setupPlaneMesh(){
     this->planeMesh->set_size(Vector2(15,2));
     this->materialPlaneMesh = memnew(StandardMaterial3D);
     ResourceLoader* loader = ResourceLoader::get_singleton();
-    this->texture = loader->load("res://assets/levels/ground/ground_4.png");
+    this->texture = loader->load("res://assets/levels/1/ground/ground_4.png");
     this->materialPlaneMesh->set_texture(BaseMaterial3D::TextureParam::TEXTURE_ALBEDO, this->texture );
     this->materialPlaneMesh->set_transparency(BaseMaterial3D::Transparency::TRANSPARENCY_ALPHA);
     this->planeMesh->set_material(this->materialPlaneMesh);

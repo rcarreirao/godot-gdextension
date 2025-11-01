@@ -2,27 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0gspuac48o5e"
-path.s3tc="res://.godot/imported/background_1.png-4e8a7908364a8d26fd6d5f5d328c74ee.s3tc.ctex"
+uid="uid://ihsfark2ol4f"
+path="res://.godot/imported/background_5.png-5e8e9bd27b47dbc55cc6b49fdbb0cf3d.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/levels/backgrounds/background_1.png"
-dest_files=["res://.godot/imported/background_1.png-4e8a7908364a8d26fd6d5f5d328c74ee.s3tc.ctex"]
+source_file="res://assets/levels/1/backgrounds/background_5.png"
+dest_files=["res://.godot/imported/background_5.png-5e8e9bd27b47dbc55cc6b49fdbb0cf3d.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -32,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

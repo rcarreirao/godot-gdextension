@@ -7,6 +7,9 @@
 #include <standard_material3d.hpp>
 #include <mesh_instance3d.hpp>
 #include <godot_cpp/classes/texture2d.hpp>
+#include "../../../objects/node/Node3DScript.hpp"
+#include "../../../objects/script/EngineGdScript.hpp"
+
 
 namespace godot {
 
@@ -18,6 +21,9 @@ namespace godot {
         PlaneMesh *planeMesh;
         StandardMaterial3D *materialPlaneMesh;
         Ref<Texture2D> texture;
+        String scriptPath;
+        Node3DScript *script;
+
     protected:
         static void _bind_methods();
         void setup();
@@ -30,6 +36,8 @@ namespace godot {
         void _ready() override;
         void setPlaneMeshSize(Vector2 vector);
         void setupMaterialPlaneMesh();
+        void setScriptPath(String scriptPath);
+        void loadScript();
 
     };
 

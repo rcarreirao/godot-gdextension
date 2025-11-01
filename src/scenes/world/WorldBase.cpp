@@ -41,5 +41,6 @@ void WorldBase::loadScript(){
     this->script = memnew(EngineGdScript);    
     this->script->setScriptPath(this->scriptPathGd);
     this->script->load_script();
+    this->set_script(this->script->get_script_object());
     this->add_child(this->script);
 }
