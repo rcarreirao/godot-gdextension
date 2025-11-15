@@ -12,7 +12,7 @@
             //"program": "${workspaceFolder}/<executable file>",
             //"program": "${workspaceFolder}/demo/bin/libgdexample.linux.template_debug.dev.x86_64.so",
             "program": "${workspaceFolder}/godot",
-            "args": ["--path", "./demo", "--verbose"],
+            "args": ["--path", "./demo"], // --editor --verbose
             "cwd": "${workspaceFolder}",
             "stopAtEntry": true,
             "environment": [],
