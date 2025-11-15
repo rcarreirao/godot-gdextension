@@ -1,8 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://d1qhhtuq0jtrk"]
+[gd_scene load_steps=5 format=3 uid="uid://d1qhhtuq0jtrk"]
 
 [ext_resource type="Script" path="res://scripts/world/world_base.gd" id="1_ns8mw"]
+[ext_resource type="Script" path="res://scripts/levels/1/camera/camera_base.gd" id="2_64e12"]
+[ext_resource type="PackedScene" uid="uid://djjrgnmvaakp5" path="res://level_base.tscn" id="3_efiwq"]
+[ext_resource type="Script" path="res://scripts/levels/level_base.gd" id="4_8wiyp"]
 
-[node name="Node3D" type="Node3D"]
-
-[node name="WorldBase" type="WorldBase" parent="."]
+[node name="WorldBase" type="WorldBase"]
 script = ExtResource("1_ns8mw")
+
+[node name="CameraBase" type="CameraBase" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14)
+top_level = false
+current = false
+script = ExtResource("2_64e12")
+
+[node name="EnvironmentLight" type="EnvironmentLight" parent="."]
+script = null
+
+[node name="LevelBase" parent="." instance=ExtResource("3_efiwq")]
+script = ExtResource("4_8wiyp")

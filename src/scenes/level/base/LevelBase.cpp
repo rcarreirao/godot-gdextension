@@ -29,6 +29,7 @@ void LevelBase::process1() {
 }
 
 void LevelBase::_ready() {
+    print_line("_ready level base c++");
     
     //this->load_script();
 
@@ -48,10 +49,10 @@ void LevelBase::load_lua_script(){
 }
 
 void LevelBase::load_gd_script(){
-    print_line("Initiating Engine Gd Script");
+    //print_line("Initiating Engine Gd Script");
 
     this->script = memnew(EngineGdScript);    
-    this->script->setScriptPath("scripts/levels/level_base.gd")->load_script();
+    this->script->setScriptPath(this->script_path)->load_script();
     this->set_script(this->script->get_script_object());
     if (this->has_method("rods"))
     {

@@ -31,8 +31,7 @@ namespace godot {
         WallDown *wallDown;
         WallUp *wallUp;
         LevelGround *levelGround;
-        String script_path = "res://my_script.gd";
-        String file = "/var/www/html/godot-tests/godot-gd-game/demo/bouncing_logo.lua";
+        String script_path = "scripts/levels/level_base.gd";
         int i;
         int g;
         Node3DScript *script;

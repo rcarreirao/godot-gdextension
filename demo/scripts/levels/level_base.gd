@@ -1,6 +1,7 @@
 @tool # <-- So it runs in the editor
 extends Node3D
-@onready var wallUp = $wallUp;
+#@onready var wallUp = $wallUp;
+#@onready var wallUp = $wallUp;
 @onready var levelGround = $levelGround;
 @onready var imageTexture = preload("res://assets/levels/1/backgrounds/background_2.png");
 var walls = [
@@ -24,12 +25,11 @@ var wallsLoaded = [];
 
 func _ready():
 	print("_read level_base");
-	print(wallUp.get_children());
-	wallUp.get_child(0).setup()
-	levelGround.set_position(Vector3(3, 0.13, 1));
+	#print(wallUp.get_children());
+	#wallUp.get_child(0).setup()
+	levelGround.set_position(Vector3(3, -3.13, 1));
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-

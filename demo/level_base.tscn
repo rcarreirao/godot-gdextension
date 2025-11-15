@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://djjrgnmvaakp5"]
+
+[ext_resource type="Script" path="res://scripts/levels/1/wall_up.gd" id="1_gntxp"]
+[ext_resource type="PackedScene" uid="uid://byktmeute4fsu" path="res://assets/levels/1/scenes/wall_up_background.tscn" id="2_ixt7m"]
+
+[node name="LevelBase" type="LevelBase"]
+script = null
+
+[node name="wallUp" type="WallUp" parent="."]
+script = ExtResource("1_gntxp")
+
+[node name="WallUpBackground" parent="wallUp" instance=ExtResource("2_ixt7m")]
