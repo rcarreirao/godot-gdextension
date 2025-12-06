@@ -6,13 +6,13 @@ var backgrounds = [];
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
+	addWallUpBackground();
 	pass # Replace with function body.
 
 func addWallUpBackground():
 	var c = preload("res://assets/levels/1/scenes/wall_up_background.tscn")
 	var n = c.instantiate();
-	add_child(n)
+	#add_child(n)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass

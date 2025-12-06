@@ -47,6 +47,7 @@ public:
 	void moveAndSlide(double delta);
 	void updateCameraPosition();
 	void setPosition(Vector3 newPosition);
+	void setSmooth(int value);
     void loadScript();
     virtual void _input(const Ref<InputEvent> &p_event) override;
     void _ready() override;

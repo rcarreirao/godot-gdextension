@@ -19,7 +19,5 @@ void WallUp::_ready() {
 }
 
 void WallUp::setup(){
-    this->wallUpBackground = memnew(WallUpBackground());
-    this->wallUpBackground->set_name("wallUpBackground");
-    this->add_child(wallUpBackground);
+
 }

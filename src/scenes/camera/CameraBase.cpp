@@ -105,9 +105,13 @@ void CameraBase::setPosition(Vector3 newPosition){
     this->set_position(this->position);
 }
 
+void CameraBase::setSmooth(int value){
+	this->smooth = value;
+}
+
 void CameraBase::_input(const Ref<InputEvent> &p_event){
     //print_line("pressing");
-    this->directionX = p_event->get_action_strength("ui_left") - p_event->get_action_strength("ui_right");
+    this->directionX = p_event->get_action_strength("ui_right") - p_event->get_action_strength("ui_left");
     this->directionY = p_event->get_action_strength("ui_up") - p_event->get_action_strength("ui_down");
     this->directionZ = p_event->get_action_strength("ui_page_down") - p_event->get_action_strength("ui_page_up");
 }

@@ -2,7 +2,7 @@
 extends CameraBase
 
 func _ready():
-	self.setPosition(Vector3(0,0,14));
+	self.setPosition(Vector3(0,3,4));
 	self.updateCameraPosition();
 	print("Camera base gd ready");
 

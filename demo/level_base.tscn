@@ -1,12 +1,57 @@
-[gd_scene load_steps=3 format=3 uid="uid://djjrgnmvaakp5"]
+[gd_scene load_steps=6 format=3 uid="uid://djjrgnmvaakp5"]
 
 [ext_resource type="Script" path="res://scripts/levels/1/wall_up.gd" id="1_gntxp"]
 [ext_resource type="PackedScene" uid="uid://byktmeute4fsu" path="res://assets/levels/1/scenes/wall_up_background.tscn" id="2_ixt7m"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_b3ve5"]
+size = Vector2(10, 2.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_727ru"]
+size = Vector3(9, 0.1, 4)
+
+[sub_resource type="Curve3D" id="Curve3D_vm63t"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13.378, 0, 0, 0, 0, 0, 0, 0, 0, 29.188, 0, 0, 0, 0, 0, 0, 0, 0, 189.022, 0, 0, 0, 0, 0, 0, 0, 0, 38.022, 0, -3, 0, 0, 0, 0, 0, 0, 21, 0, -3, 0, 0, 0, 0, 0, 0, -4.589, 0, -3, 0, 0, 0, 0, 0, 0, -8.831, 0, -3, 0, 0, 0, 0, 0, 0, -11.769, 0, 0, 0, 0, 0, 0, 0, 0, -2.465, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 11
 
 [node name="LevelBase" type="LevelBase"]
 script = null
 
 [node name="wallUp" type="WallUp" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0871558, -0.996194, 0, 0.996194, 0.0871558, 0.00120544, 0.946502, -0.0927008)
+use_collision = true
+mesh = SubResource("PlaneMesh_b3ve5")
 script = ExtResource("1_gntxp")
 
-[node name="WallUpBackground" parent="wallUp" instance=ExtResource("2_ixt7m")]
+[node name="WallDown" type="WallDown" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 2)
+visible = false
+mesh = SubResource("BoxMesh_727ru")
+
+[node name="Path3D" type="Path3D" parent="."]
+visible = false
+curve = SubResource("Curve3D_vm63t")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Path3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.001, 0.012, -0.009)
+use_collision = true
+polygon = PackedVector2Array(0, 0, 0, 0.1, 2, 0.1, 1, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+
+[node name="LevelGround" type="LevelGround" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.12, 1)
+visible = false
+
+[node name="WallUpBackground" parent="." instance=ExtResource("2_ixt7m")]
+transform = Transform3D(1, 0, 0, 0, -4.37113e-08, -0.999999, 0, 0.999999, -4.37113e-08, 0, 0.85, 0.016388)

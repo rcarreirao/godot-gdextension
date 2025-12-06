@@ -56,6 +56,6 @@ void EngineGdScript::call_method(String method_name, Array args = Array()){
         UtilityFunctions::print("No script instance loaded.");
         return;
     }
-    Variant ret = this->instanceGdScript->call(method_name, args);
+    Variant ret = this->instanceGdScript->call(method_name);
     UtilityFunctions::print("Call result:", ret);
 }

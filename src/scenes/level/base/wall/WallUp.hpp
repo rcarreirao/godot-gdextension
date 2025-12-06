@@ -14,7 +14,7 @@ namespace godot {
         GDCLASS(WallUp, CSGMesh3D)
 
     private:
-        WallUpBackground *wallUpBackground;
+        
 
     protected:
         static void _bind_methods();

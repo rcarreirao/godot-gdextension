@@ -25,7 +25,9 @@
         "valarray": "cpp",
         "random": "cpp",
         "typeindex": "cpp",
-        "typeinfo": "cpp"
+        "typeinfo": "cpp",
+        "optional": "cpp",
+        "system_error": "cpp"
     },
     //"cmake.sourceDirectory": "/var/www/html/godot-tests/godot-gd-game/lib/godot-cpp"
 }
